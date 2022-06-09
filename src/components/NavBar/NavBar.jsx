@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../../assets/RaidenLogo.png"
+import CartWidget  from "../CartWidget/CartWidget.jsx";
 
 export default function NavBar() {
   return (
@@ -31,13 +32,12 @@ export default function NavBar() {
         <li class="nav-item">
           <a class="nav-link" href="#">Contácto</a>
         </li>
-        <li class="nav-item">
-        </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search"/>
-      <button class="btn btn-outline-light" type="submit">Buscar</button>
+        <input class="form-control me-1" type="search" placeholder="Buscar..." aria-label="Search"/>
+      <button class="btn btn-outline-light me-4" type="submit">Buscar</button>
       </form>
+      <CartWidget/>
     </div>
   </div>
 </nav>

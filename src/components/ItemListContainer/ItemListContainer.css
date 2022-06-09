@@ -1,0 +1,20 @@
+.containerProduct{
+    background-color: #d1c7be;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    height: 40rem;
+    margin: 0 8rem 0 8rem;
+    
+
+}
+
+.title{
+    font-size: larger;
+    display: flex;
+    color: blue;
+    height: 20%;
+    
+}

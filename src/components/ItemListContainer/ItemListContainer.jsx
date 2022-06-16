@@ -6,17 +6,15 @@ const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    //apis, llamados al backend
+
     const traerbodega = new Promise((res, rej) => {
       setTimeout(() => {
         res(bodega);
       }, 2000);
     });
 
-    //console.log(traerbodega)
-    traerbodega
+  traerbodega
       .then((res) => {
-        //console.log(res)
         setProducts(res);
       })
       .catch((error) => {

@@ -1,37 +1,39 @@
-import React, {useState, useEffect} from 'react'
-import "./ItemListContainer.css"
-import { products } from "../../data/products.js";
-import ItemList from '../ItemList/ItemList';
+import React, { useState, useEffect } from "react";
+import { bodega } from "../../data/products";
+import ItemList from "../ItemList/ItemList";
 
+const ItemListContainer = ({greeting}) => {
+  const [products, setProducts] = useState([]);
 
-const ItemListContainer = ({}) => {
-    const [products,setProducts] = useState([]);
-    useEffect(() => {const callProducts = new Promise((resolve, reject) => {
+  useEffect(() => {
+    //apis, llamados al backend
+    const traerbodega = new Promise((res, rej) => {
       setTimeout(() => {
-        resolve(products);
+        res(bodega);
       }, 2000);
     });
-  callProducts.then((resolve) =>{
-    //console.log(products)
-    setProducts(resolve);
-  })
-    .catch((error) => {
-      console.error(error);
-    });
-  
-  
-  },[]);
 
+    //console.log(traerbodega)
+    traerbodega
+      .then((res) => {
+        //console.log(res)
+        setProducts(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-console.log(products)
+  console.log(bodega);
 
-return (
-  <>
-    <div>
-        <ItemList items={products} />
+  return (
+    <div className="text-center container mx-auto mt-5">
+      <div>
+        <h1 className="text-primary mb-5">{greeting}</h1>
+      </div>
+      <ItemList items={products} />
     </div>
-  </>
-);
+  );
 };
 
 export default ItemListContainer;

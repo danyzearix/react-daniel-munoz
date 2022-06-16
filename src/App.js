@@ -14,7 +14,7 @@ function App() {
     <div>
         <NavBar/>
           
-          <ItemListContainer greeting = "Aqui van los productos" />
+          <ItemListContainer greeting = "CATÁLOGO" />
           <ItemCount initial={0} stock={7} onAdd={onAdd}/>
 
     </div>

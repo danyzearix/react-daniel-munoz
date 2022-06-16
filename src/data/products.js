@@ -1,9 +1,9 @@
-export const products =  [{
+export const bodega =  [{
         id: 1,
         name: 'PS5 DIGITAL EDITION',
         price: 500,
         stock: 10,
-        img: './img/PS5.jpg',
+        img: './img/PS5.jpeg',
         category: 'consolas',
         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iusto magni quaer"},
     
@@ -30,7 +30,7 @@ export const products =  [{
                     name: 'ASUS ROG ZEPHYRUS 15 DUO',
                     price: 1500,
                     stock: 3,
-                    img: './img/ASUS_ZEPHYRUS_DUO.jpg',
+                    img: './img/ROG_DUO.jpg',
                     category: 'laptops',
                     description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt iusto magni quaer"},
                 

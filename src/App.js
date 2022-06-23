@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -12,10 +13,18 @@ function App() {
     console.log(`Seleccionaste ${cantidad} de unidades`)
   }
   return (
-    <div>
+    <>
+      <BrowserRouter>
         <NavBar/>
-          <ItemDetailContainer/>
-    </div>
+        <Routes>
+          <Route path='/' element={<ItemListContainer greeting={"Lista de productos"}/>} />
+          <Route path='/categorias/:categoryId' element={<ItemListContainer/>} />
+          <Route path='/producto/:productoId' element={<ItemDetailContainer/>} />
+        </Routes>
+          
+          
+      </BrowserRouter>
+    </>
   );
 }
 

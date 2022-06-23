@@ -13,7 +13,7 @@ function ItemCount({initial, stock, onAdd}) {
         setCount(parseInt(initial));
     },[initial])
 
-    let min = 0;
+    let min = 1;
 
   return (
     <div className="container-fluid d-flex flex-wrap justify-content-center mt-2 mb-2 ">

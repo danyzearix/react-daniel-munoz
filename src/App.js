@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 //import { BrowserRouter , Route, Routes } from "react-router-dom"
 //Componente global
 function App() {
@@ -13,10 +14,7 @@ function App() {
   return (
     <div>
         <NavBar/>
-          
-          <ItemListContainer greeting = "CATÁLOGO" />
-          <ItemCount initial={0} stock={7} onAdd={onAdd}/>
-
+          <ItemDetailContainer/>
     </div>
   );
 }

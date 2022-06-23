@@ -16,7 +16,7 @@ function ItemCount({initial, stock, onAdd}) {
     let min = 0;
 
   return (
-    <div className="container-fluid d-flex flex-wrap justify-content-center mt-5 ">
+    <div className="container-fluid d-flex flex-wrap justify-content-center mt-2 mb-2 ">
         <button disabled = {count <= min} onClick={restar} className="btn btn-primary"> - </button>
         <span className="ms-3 me-3"> {count} </span>
         <button disabled= {count >= stock} onClick={sumar} className="btn btn-primary"> + </button>

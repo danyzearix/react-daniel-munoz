@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 
 function ItemDetail({data}) {
+  const [carrito, setCarrito] = useState(false)
+  const onAdd = (count) => {
+  setCarrito(true)}
   return (
     <div className='container-sm d-flex flex-column justify-content-center'>
 
@@ -13,7 +17,10 @@ function ItemDetail({data}) {
           <h6>Sobre este producto: <br /> {data.description}</h6>
           <p className='fw-bolder'>STOCK:</p>
           <p>{data.stock}</p>
-          <ItemCount initial={1} stock={data.stock}/>
+          {
+            carrito ? <Link to="/cart">Finalizar compra</Link>
+            :<ItemCount initial={3} stock={data.stock} onAdd={onAdd}/>
+          }
         </div>
 
     </div>

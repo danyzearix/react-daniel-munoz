@@ -1,11 +1,17 @@
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount'
+import React, {useState, useContext} from 'react';
+import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
+import { CartContext } from '../../context/CartContext';
 
 function ItemDetail({data}) {
   const [carrito, setCarrito] = useState(false)
+  const { addToCart } = useContext(CartContext)
+
   const onAdd = (count) => {
-  setCarrito(true)}
+  setCarrito(true);
+  addToCart(data, count)
+  }
+  
   return (
     <div className='container-sm d-flex flex-column justify-content-center'>
 

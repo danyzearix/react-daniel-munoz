@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import { bodega } from "../../data/products";
@@ -6,6 +6,7 @@ import { bodega } from "../../data/products";
 
 const Item = ({ item }) => {
 //Componente retorna los valores de cada producto
+
   return (
     <div className="card mx-auto mb-5 shadow p-3 mb-5 bg-body rounded" style={{width: 20 + "rem"}}>
             <img src={item.img} className="card-img-top" alt="..."/>

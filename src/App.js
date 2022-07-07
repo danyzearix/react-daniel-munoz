@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CartWidget from './components/CartWidget/CartWidget';
 import Contacto from './components/Contacto/Contacto';
 import CartProvider from './context/CartContext';
+import Cart from './components/Cart/Cart';
 
 
 //Componente global
@@ -24,7 +25,7 @@ function App() {
             <Route path='/' element={<ItemListContainer greeting={"Lista de productos"}/>} />
             <Route path='/categorias/:categoryId' element={<ItemListContainer/>} />
             <Route path='/producto/:productoId' element={<ItemDetailContainer/>} />
-            <Route path='/carrito' element={<CartWidget/>} />
+            <Route path='/carrito' element={<Cart/>} />
             <Route path='/contacto' element={<Contacto/>} />
           </Routes>
         </CartProvider>

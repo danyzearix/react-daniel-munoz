@@ -6,9 +6,13 @@ const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addToCart = (item, newCount) => {
-        const newCarrito = cart.filter(item => item.id !== item.id);
-        newCarrito.push({...item, count: newCount});
-        setCart(newCarrito)
+        if (findinCart(item.id)){
+            setCart(cart.map(product => {
+                return  product.id === item.id ? {...product, count: product.count + newCount} : product}));
+        } else {
+            setCart([...cart, {...item, count: newCount}]);
+        }
+        console.log(cart)
     }
 
    const totalPrice = () => {

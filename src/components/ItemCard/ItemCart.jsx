@@ -1,15 +1,16 @@
 import React, {useContext} from 'react';
 import { CartContext } from '../../context/CartContext';
 
-function IteamCart() {
+function ItemCart({product}) {
     const { deleteProduct } = useContext(CartContext);
+
   return (
-    <div>
-       <img src={product.img} alt="" srcset="" /> 
-       <div>
-        <h3>Producto: {product.name}</h3>
-        <h3>Precio: {product.price}</h3>
-        <h3>Cantidad: {product.count}</h3>
+    <div className='container-sm'>
+       <img src={product.img} width={100} /> 
+       <div className='container-sm'>
+        <h5>Producto: {product.name}</h5>
+        <h5>Precio: {product.price}</h5>
+        <h5>Cantidad: {product.count}</h5>
         <h5>Total: ${product.count * product.price}</h5>
         <button onClick={() => deleteProduct(product.id)}>Eliminar producto</button>
        </div>
@@ -17,4 +18,4 @@ function IteamCart() {
   )
 }
 
-export default IteamCart;
+export default ItemCart;

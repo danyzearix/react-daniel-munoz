@@ -31,7 +31,7 @@ export default function NavBar() {
           <NavLink className="nav-link" to="/categorias/laptops">Laptops</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/contacto">Contácto</NavLink>
+          <NavLink className="nav-link" to="/carrito">Carrito</NavLink>
         </li>
       </ul>
       <form className="d-flex" role="search">

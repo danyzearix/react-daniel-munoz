@@ -19,6 +19,10 @@ const CartProvider = ({ children }) => {
     return cart.reduce((prev, act) => prev + act.count * act.price, 0);
     }
 
+    const allProducts = () => {
+        return cart.reduce((prev, act) => prev + act.count, 0);
+    }
+
     const totalProducts = () => { cart.reduce((acc, actualProduct) => acc + actualProduct.count, 0) 
     }
 
@@ -38,6 +42,7 @@ const CartProvider = ({ children }) => {
             findinCart,
             deleteProduct,
             totalPrice,
+            allProducts,
             totalProducts,
             cart
         }}>

@@ -1,0 +1,12 @@
+#cartCounter{
+    font-size: small;
+    color: #00A1BA;
+    text-decoration: none;
+    position: absolute;
+    top: 38px;
+    right: 22.5px;
+}
+
+.none{
+    display: none;
+}

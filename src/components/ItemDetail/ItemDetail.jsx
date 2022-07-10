@@ -24,7 +24,7 @@ function ItemDetail({data}) {
           <p className='fw-bolder'>STOCK:</p>
           <p>{data.stock}</p>
           {
-            carrito ? <Link to="/cart">Finalizar compra</Link>
+            carrito ? <Link to="/carrito">Finalizar compra</Link>
             :<ItemCount initial={3} stock={data.stock} onAdd={onAdd}/>
           }
         </div>

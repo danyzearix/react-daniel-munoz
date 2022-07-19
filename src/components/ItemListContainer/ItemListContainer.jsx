@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { bodega } from "../../data/products";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = ({greeting}) => {
   const [products, setProducts] = useState([]);
@@ -10,28 +10,18 @@ const ItemListContainer = ({greeting}) => {
 
   useEffect(() => {
 
-    const traerbodega = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(bodega);
-      }, 20);
-    });
-    if (categoryId) {
-      traerbodega.then(res => setProducts(res.filter(consolas => consolas.category === categoryId)));
-      } 
-      if (categoryId) {
-        traerbodega.then(res => setProducts(res.filter(ipad => ipad.category === categoryId)));
-        }
-        
-        if (categoryId) {
-          traerbodega.then(res => setProducts(res.filter(smartwatch => smartwatch.category === categoryId)));
-          }
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "products");
+    
 
-          if (categoryId) {
-            traerbodega.then(res => setProducts(res.filter(laptops => laptops.category === categoryId)));
-            }
-      else {
-      traerbodega.then(res => setProducts(res));
-    }
+      if (categoryId) {
+        const queryFilter = query(queryCollection, where("category", "==", categoryId))
+        getDocs(queryFilter)
+          .then(res => setProducts(res.docs.map(product => ({id: product.id, ...product.data() }))))
+      } else {
+        getDocs(queryCollection)
+          .then(res => setProducts(res.docs.map(product => ({id: product.id, ...product.data() }))))
+      }
 
 
   }, [categoryId]);

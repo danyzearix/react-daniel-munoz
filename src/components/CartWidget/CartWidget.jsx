@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import { NavLink } from 'react-router-dom'
 import icon from "./car-icon.svg"
 import { CartContext } from '../../context/CartContext';
-import css from "./CartWidget.css"
+import "./CartWidget.css"
 
 
 

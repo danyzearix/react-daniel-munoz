@@ -10,10 +10,7 @@ import Cart from './components/Cart/Cart';
 
 //Componente global
 function App() {
-  //Funcion que agregar al carrito por console.log
-  const onAdd = (cantidad) =>{
-    console.log(`Seleccionaste ${cantidad} de unidades`)
-  }
+
   return (
     <>
       <BrowserRouter>

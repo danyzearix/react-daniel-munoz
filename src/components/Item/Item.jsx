@@ -1,7 +1,5 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
-import { useParams } from "react-router-dom";
-import { bodega } from "../../data/products";
 
 
 const Item = ({ item }) => {

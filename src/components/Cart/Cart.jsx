@@ -6,7 +6,7 @@ import ItemCart from '../ItemCard/ItemCart';
 
 function Cart () {
     const { cart, totalPrice } = useContext(CartContext);
-
+    
     const orden = {
         cliente: {
             name: "Daniel",

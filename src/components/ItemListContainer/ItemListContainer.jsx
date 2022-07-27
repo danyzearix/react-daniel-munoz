@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import Carousel from "../Carousel/Carousel";
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
   const { categoryId } = useParams();
@@ -13,7 +14,6 @@ const ItemListContainer = ({greeting}) => {
     const querydb = getFirestore();
     const queryCollection = collection(querydb, "products");
     
-
       if (categoryId) {
         const queryFilter = query(queryCollection, where("category", "==", categoryId))
         getDocs(queryFilter)
@@ -26,14 +26,22 @@ const ItemListContainer = ({greeting}) => {
 
   }, [categoryId]);
 
-  return (
+if (products.length >= 8 ){
+ return (
+    <>
+    <Carousel/>
     <div className="text-center container mx-auto mt-5">
-      <div>
-        <h1 className="text-primary mb-5">{greeting}</h1>
-      </div>
       <ItemList items={products} />
     </div>
+    </>
   );
+}  
+return (
+
+ <div className="text-center container mx-auto mt-5">
+    <ItemList items={products} />
+  </div>
+)
 };
 
 export default ItemListContainer;
